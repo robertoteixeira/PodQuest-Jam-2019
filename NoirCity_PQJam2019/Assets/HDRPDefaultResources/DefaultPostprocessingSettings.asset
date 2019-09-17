@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: 2926520594555130314}
-  - {fileID: 4291193248687608038}
+  - {fileID: 4425295518981249498}
   - {fileID: 1591912495330335307}
 --- !u!114 &1591912495330335307
 MonoBehaviour:
@@ -133,7 +133,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
     min: 0.001
---- !u!114 &4291193248687608038
+--- !u!114 &4425295518981249498
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,16 +149,16 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.339
+    m_Value: 0.1
     min: 0
     max: 1
   scatter:
     m_OverrideState: 1
-    m_Value: 0.044
+    m_Value: 0.4
     min: 0
     max: 1
   tint:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 0
@@ -171,14 +171,14 @@ MonoBehaviour:
     m_Value: 0
     min: 0
   highQualityFiltering:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   resolution:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
   prefilter:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   anamorphic:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
