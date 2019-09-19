@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public bool IsCameraModeOn = false;
     public int MaxShots = 3;
     public int ShotsAvailable;
+    public CameraLook CameraLook;
 
     public Action<int> OnShot;
     public Action<bool> OnSetCameraMode;
@@ -46,6 +47,11 @@ public class PlayerController : MonoBehaviour
         IsCameraModeOn = !IsCameraModeOn;
         OnSetCameraMode?.Invoke(IsCameraModeOn);
         Debug.Log("Camera Mode On: " + IsCameraModeOn);
+    }
+
+    public void Look(Vector2 position)
+    {
+        CameraLook.Look(position);
     }
 
 }
