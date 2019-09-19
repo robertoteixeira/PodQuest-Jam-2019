@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 181.74055, g: 240.9127, b: 325.2635, a: 1}
+  m_IndirectSpecularColor: {r: 181.14777, g: 240.1812, b: 324.5753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1639,7 +1639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGlobal: 1
-  priority: 1
+  priority: 2
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 0904b06389a0ca142ae72fe1effad808, type: 2}
@@ -2789,6 +2789,11 @@ PrefabInstance:
     - target: {fileID: 7295906852949042543, guid: 63afd4c2ee6c3d24086fdfceefa5f2b0,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295906852949042543, guid: 63afd4c2ee6c3d24086fdfceefa5f2b0,
+        type: 3}
+      propertyPath: priority
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
