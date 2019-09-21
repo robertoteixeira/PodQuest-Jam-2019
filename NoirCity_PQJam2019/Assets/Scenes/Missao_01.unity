@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 181.74055, g: 240.9127, b: 325.2635, a: 1}
+  m_IndirectSpecularColor: {r: 181.14777, g: 240.1812, b: 324.5753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1842,7 +1842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &461904981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,10 +1856,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGlobal: 1
-  priority: -1
+  priority: 3
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: cf1b32335766f2e40a3d01fb915d6960, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 201be81704777904bb578816f3969186, type: 2}
 --- !u!4 &461904982
 Transform:
   m_ObjectHideFlags: 0
@@ -6978,6 +6978,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Darkness
+      objectReference: {fileID: 0}
+    - target: {fileID: 783187948074763616, guid: bfbf5bef3734cf44d9c6e3e73725a9d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 783187948074763619, guid: bfbf5bef3734cf44d9c6e3e73725a9d4,
         type: 3}
