@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Value: 0
   color:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.20064971, g: 0.21995945, b: 0.254717, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -28,12 +28,12 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.153
     min: 0
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 1
     min: 0.01
     max: 1
   roundness:
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Name: FotografiaON Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 302870272605056377}
   - {fileID: -7146298902441025868}
+  - {fileID: 302870272605056377}
   - {fileID: -244679378711140148}
 --- !u!114 &302870272605056377
 MonoBehaviour:
