@@ -10,7 +10,8 @@ public class CameraLook : MonoBehaviour
     public float Smoothing = 2.0f;
     public Vector2 XBoundary;
     public Vector2 YBoundary;
-    
+
+    public bool debugLog;
     void Start()
     {
         _character = this.transform.parent.gameObject;
@@ -35,7 +36,8 @@ public class CameraLook : MonoBehaviour
         if (_mouseLook.y > YBoundary.y)
             _mouseLook.y = YBoundary.y;
 
-        Debug.Log("Camera: " + _mouseLook);
+        if(debugLog)
+            Debug.Log("Camera: " + _mouseLook);
 
         transform.localRotation = Quaternion.AngleAxis(-_mouseLook.y, Vector3.right);
         _character.transform.localRotation = Quaternion.AngleAxis(_mouseLook.x, _character.transform.up);
