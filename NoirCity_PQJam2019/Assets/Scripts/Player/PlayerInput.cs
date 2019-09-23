@@ -24,6 +24,6 @@ public class PlayerInput : MonoBehaviour
         }
 
         var pos = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        //_playerController.Look(pos);
+        _playerController.Look(pos);
     }
 }

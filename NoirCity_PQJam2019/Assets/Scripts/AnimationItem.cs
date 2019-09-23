@@ -11,32 +11,37 @@ public class AnimationItem : MonoBehaviour
     public Action OnEnd;
 
     private Animator _animator;
+    private Animation _anim;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        //_animator = GetComponent<Animator>();
+        _anim = GetComponent<Animation>();
 
-        if (_animator == null)
+        if (_anim == null)
         {
             Debug.Log("Error: Did not find anim!");
         }
 
         else
         {
-            AnimationClip[] clips = _animator.runtimeAnimatorController.animationClips;
-            foreach (AnimationClip clip in clips)
-            {
-                if (clip.name == "Main")
-                {
-                    AnimationLength = clip.length;                    
-                }
-            }
+            //AnimationClip[] clips = _animator.runtimeAnimatorController.animationClips;
+            //foreach (AnimationClip clip in clips)
+            //{
+            //    if (clip.name == "Main")
+            //    {
+            //        AnimationLength = clip.length;                    
+            //    }
+            //}
+
+            AnimationLength = _anim.clip.length;            
         }
     }
 
-    private void Begin()
+    public void Begin()
     {
-        _animator.SetTrigger("begin");
+        //_animator.SetTrigger("begin");
+        _anim.Play();
         StartCoroutine(End(AnimationLength));
     }
 
