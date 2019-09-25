@@ -3,9 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 public class AnimationItem : MonoBehaviour, IAnimationItem
-{
-    public bool IsMain;
-
+{     
     public float AnimationLength { get; set; }
     public Action OnBegin { get; set; }
     public Action OnEnd { get; set; }
@@ -28,7 +26,8 @@ public class AnimationItem : MonoBehaviour, IAnimationItem
     }
 
     public void Begin()
-    {        
+    {
+        gameObject.SetActive(true);
         _anim.Play();
         StartCoroutine(End(AnimationLength));
     }
@@ -37,5 +36,6 @@ public class AnimationItem : MonoBehaviour, IAnimationItem
     {
         yield return new WaitForSeconds(interval);
         OnEnd?.Invoke();
+        gameObject.SetActive(false);
     }
 }
