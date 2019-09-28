@@ -59,8 +59,8 @@ public class AnimationSpawner : MonoBehaviour
             }
             
             chosenRooms.Add(roomIndex);
-            Animations[i].transform.position = new Vector3(Rooms[roomIndex].transform.position.x, Rooms[roomIndex].transform.position.y + 1.0f, Rooms[roomIndex].transform.position.z);
-            MainAnimation.transform.position = new Vector3(Rooms[Room - 1].transform.position.x, Rooms[Room - 1].transform.position.y + 1.0f, Rooms[Room - 1].transform.position.z);
+            Animations[i].transform.position = new Vector3(Rooms[roomIndex].transform.position.x, Rooms[roomIndex].transform.position.y, Rooms[roomIndex].transform.position.z);
+            MainAnimation.transform.position = new Vector3(Rooms[Room - 1].transform.position.x, Rooms[Room - 1].transform.position.y, Rooms[Room - 1].transform.position.z);
 
             Animations[i].SetActive(false);
             MainAnimation.SetActive(false);

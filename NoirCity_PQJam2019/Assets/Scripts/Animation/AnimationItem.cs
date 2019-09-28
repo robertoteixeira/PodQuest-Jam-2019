@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class AnimationItem : MonoBehaviour, IAnimationItem
@@ -7,28 +8,31 @@ public class AnimationItem : MonoBehaviour, IAnimationItem
     public float AnimationLength { get; set; }
     public Action OnBegin { get; set; }
     public Action OnEnd { get; set; }
-
-    private Animation _anim;    
+   
+    private Animator _animator;
 
     private void Awake()
-    {        
-        _anim = GetComponent<Animation>();
+    {                
+        _animator = GetComponent<Animator>();
 
-        if (_anim == null)
+        if (_animator == null)
         {
             Debug.Log("Error: Did not find anim!");
         }
 
         else
-        {          
-            AnimationLength = _anim.clip.length;            
+        {
+            AnimationLength = _animator.runtimeAnimatorController.animationClips
+                                            .First(x => x.name == "Take 001").length;
+            //AnimationLength = _anim.clip.length;            
         }
-    }
+}
 
     public void Begin()
     {
         gameObject.SetActive(true);
-        _anim.Play();
+        //_anim.Play();
+        _animator.SetTrigger("play");
         StartCoroutine(End(AnimationLength));
     }
 
