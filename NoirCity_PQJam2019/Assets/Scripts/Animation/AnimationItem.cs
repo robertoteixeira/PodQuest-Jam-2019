@@ -23,15 +23,14 @@ public class AnimationItem : MonoBehaviour, IAnimationItem
         else
         {
             AnimationLength = _animator.runtimeAnimatorController.animationClips
-                                            .First(x => x.name == "Take 001" || x.name == "mixamo.com").length;
-            //AnimationLength = _anim.clip.length;            
+                                            .First(x => x.name == "Take 001" || x.name == "mixamo.com" || x.name == "Caso2" || x.name == "Caso3")
+                                            .length;                      
         }
-}
+    }
 
     public void Begin()
     {
-        gameObject.SetActive(true);
-        //_anim.Play();
+        gameObject.SetActive(true);        
         _animator.SetTrigger("play");
         StartCoroutine(End(AnimationLength));
     }

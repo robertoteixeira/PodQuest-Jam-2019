@@ -11,52 +11,36 @@ public class PlayerVision : MonoBehaviour
 
     public string[] targetableTags;
 
-    Ray ray;
-    RaycastHit hit;
-
     GameObject entityTargeted;
     public List<GameObject> visibleNPCs = new List<GameObject>();
     private Plane[] planes;
+    Ray ray;
 
     // Update is called once per frame
     void Update()
     {
-
+        ray = new Ray(transform.position, transform.forward);
         visibleNPCs = GetVisibleList(targetableTags);
         if (visibleNPCs.Count > 0)
         {
 
             foreach (GameObject i in visibleNPCs)
             {
-                Vector3 objPos = i.transform.Find("Center").position;
-                objPos = Camera.main.WorldToScreenPoint(objPos);
-                Vector3 centerOfScreen = new Vector3(Screen.width / 2, Screen.height / 2, objPos.z);
-                //NGUIDebug.Log(Vector3.Distance(centerOfScreen,objPos));
-            }
-        }
-
-        Debug.DrawRay(transform.position, transform.forward, Color.red);
-        ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (visibleNPCs.Find(e => e.tag == hit.collider.tag))
-            {
-                if (entityTargeted != hit.collider.gameObject)
+                Bounds bounds = i.GetComponent<Renderer>().bounds;
+                if (bounds.IntersectRay(ray))
                 {
-                    entityTargeted = hit.collider.gameObject;
-
+                    entityTargeted = i;
+                    break;
+                }
+                else
+                {
+                    entityTargeted = null;
                 }
             }
-            else
-            {
-                entityTargeted = null;
-            }
+            PlayerVisionManager.Instance.currentTargeted = entityTargeted;
         }
-        else
-        {
-            entityTargeted = null;
-        }
-        PlayerVisionManager.Instance.currentTargeted = entityTargeted;
+
+
     }
 
     List<GameObject> GetVisibleList(string[] searchTags)
@@ -79,30 +63,18 @@ public class PlayerVision : MonoBehaviour
         return bufferList;
     }
 
-    List<GameObject> GetVisibleList(string searchTag)
+    public List<GameObject> GetVisibleList(string searchTag)
     {
         List<GameObject> bufferList = new List<GameObject>();
         planes = GeometryUtility.CalculateFrustumPlanes(GetComponent<Camera>());
 
         foreach (GameObject i in GameObject.FindGameObjectsWithTag(searchTag))
         {
-            if (GeometryUtility.TestPlanesAABB(planes, i.GetComponent<Collider>().bounds))
-                bufferList.Add(i);
+            var renderer = i.GetComponent<Renderer>();
+            if (renderer != null)
+                if (GeometryUtility.TestPlanesAABB(planes, i.GetComponent<Renderer>().bounds))
+                    bufferList.Add(i);
         }
         return bufferList;
     }
-
-    //	bool IsInTagList(string targetTag)
-    //	{
-    //		bool isInList = false;
-    //		foreach (string i in targetableTags)
-    //		{
-    //			if(i == targetTag)
-    //			{
-    //				isInList = true;
-    //				break;
-    //			}
-    //		}
-    //		return isInList;
-    //	}
 }

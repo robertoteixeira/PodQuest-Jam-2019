@@ -13,8 +13,10 @@ public class AnimationSpawner : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.OnLevelStart += Execute;
+
         Prepare();
-        //Position();
+        Position();
     }
 
     void Prepare()
@@ -34,14 +36,14 @@ public class AnimationSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Position();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Execute();
-        }
+        //if (Input.GetKeyDown(KeyCode.X))
+        //{
+        //    Position();
+        //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Execute();
+        //}
     }
 
     void Position()
@@ -69,7 +71,7 @@ public class AnimationSpawner : MonoBehaviour
         Debug.Log(string.Join("-", chosenRooms));
     }
 
-    void Execute()
+    private void Execute()
     {
         Animations[0].GetComponent<IAnimationItem>().Begin();
     }

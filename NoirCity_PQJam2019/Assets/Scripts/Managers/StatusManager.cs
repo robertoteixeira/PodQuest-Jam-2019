@@ -5,10 +5,16 @@ public class StatusManager : MonoBehaviour
     public int CurrentStatus;
     public CaseProfile[] Profiles;
 
-    private CaseProfile _currentStatus;
+    public CaseProfile CurrentProfile;
+
+    public bool CaughtOnCamera = false;
 
     public void SetStatus(int status)
     {
-        _currentStatus = Profiles[status];
+        if (status == 99)
+            CurrentProfile = null;
+        else
+            CurrentProfile = Profiles[status];
+        CurrentStatus = status;
     }
 }

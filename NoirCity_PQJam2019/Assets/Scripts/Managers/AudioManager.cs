@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -11,6 +12,12 @@ public class AudioManager : Singleton<AudioManager>
 
     private void Awake()
     {
+        var audioManagers = GameObject.FindGameObjectsWithTag("AudioManager");
+
+        if(audioManagers.Count() > 1)
+            Destroy(audioManagers.Last().gameObject);
+
+        this.Reload();
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -21,31 +28,37 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayMusic()
     {
-        Music.Play();
+        if (Music != null)
+            Music.Play();
     }
 
     public void PlayAmbient()
     {
-        Ambient.Play();
+        if (Ambient != null)
+            Ambient.Play();
     }
 
     public void PlaySoundEffect()
     {
-        SoundEffect.Play();
+        if(SoundEffect != null)
+            SoundEffect.Play();
     }
     
     public void StopMusic()
     {
-        Music.Stop();
+        if (Music != null)
+            Music.Stop();
     }
 
     public void StopAmbient()
     {
-        Ambient.Stop();
+        if(Ambient != null)
+            Ambient.Stop();
     }
 
     public void StopSoundEFfect()
     {
-        SoundEffect.Stop();
+        if (SoundEffect != null)
+            SoundEffect.Stop();
     }
 }

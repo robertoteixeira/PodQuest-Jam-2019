@@ -9,5 +9,6 @@ public class MissionMenu : MonoBehaviour
         StartButton.SetActive(false);
         UIManager.Instance.HideMissionPanel();
         CursorManager.Instance.HideCursor();
+        GameManager.Instance.LevelStart();
     }
 }

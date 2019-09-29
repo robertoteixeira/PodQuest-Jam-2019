@@ -7,10 +7,17 @@ public class UIManager : Singleton<UIManager>
     public GameObject SendPicturePanel;
     public GameObject GameOverPanel;
     public GameObject MissionPanel;
+    public GameObject PhotoPanel;
+    public GameObject MissionFinishPanel;
 
     public Action<Texture2D> OnScreenshot;
 
     private PlayerController _playerController;
+
+    private void Awake()
+    {
+        this.Reload();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +50,7 @@ public class UIManager : Singleton<UIManager>
     private void OnScreenShot(Texture2D screenshot)
     {
         OnScreenshot?.Invoke(screenshot);
+        ShowPhotoPanel();
     }
 
     public void ShowMissionPanel()
@@ -53,6 +61,27 @@ public class UIManager : Singleton<UIManager>
     public void HideMissionPanel()
     {
         MissionPanel.SetActive(false);
+    }
+
+    public void ShowPhotoPanel()
+    {
+        PhotoPanel.SetActive(true);
+    }
+
+    public void HidePhotoPanel()
+    {
+        PhotoPanel.SetActive(false);
+    }
+
+    public void ShowMissionFinishPanel()
+    {        
+        GameObject.Find("MissionFinisher").GetComponent<MissionFinisher>().FinishMission();
+        MissionFinishPanel.SetActive(true);
+    }
+
+    public void HideMissionFinishPanel()
+    {
+        MissionFinishPanel.SetActive(false);
     }
   
 }

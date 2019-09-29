@@ -76,4 +76,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         applicationIsQuitting = true;
     }
+
+    public void Reload()
+    {
+        applicationIsQuitting = false;
+    }
 }
