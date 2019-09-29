@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class EffectsManager : Singleton<EffectsManager>
 {
@@ -15,6 +17,19 @@ public class EffectsManager : Singleton<EffectsManager>
 
     private void OnCameraSetMode(bool status)
     {
-        CameraEffect.SetActive(status);
+        StartCoroutine(SetCammera(status));        
     }    
+
+    private IEnumerator SetCammera(bool status)
+    {
+        if (status)
+        {
+            yield return new WaitForSeconds(TimeSpan.FromMilliseconds(1000).Seconds);
+            CameraEffect.SetActive(true);
+        }
+        else
+        {
+            CameraEffect.SetActive(false);
+        }
+    }
 }
