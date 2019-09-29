@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NEW_Missao_01.unity
     guid: 7063d2cfb48ab164f9a1df10da1ce6b1
+  - enabled: 1
+    path: Assets/Scenes/NEW_Missao_02.unity
+    guid: 9220c28cfb7a26f47a6db8971b291d31
   m_configObjects: {}

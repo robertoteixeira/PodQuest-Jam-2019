@@ -8184,7 +8184,7 @@ MonoBehaviour:
   ConclusionText: {fileID: 2082967986}
   SuccessImage: {fileID: 578455889}
   FailureImage: {fileID: 229053221}
-  NextMission: 
+  NextMission: NEW_Missao_02
 --- !u!1001 &1512023976
 PrefabInstance:
   m_ObjectHideFlags: 0

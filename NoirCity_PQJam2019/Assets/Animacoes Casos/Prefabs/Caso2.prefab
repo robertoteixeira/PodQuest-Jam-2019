@@ -1826,9 +1826,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6273004875613854694}
   - component: {fileID: 4144494128171153052}
+  - component: {fileID: 221383433033285175}
   m_Layer: 0
-  m_Name: Animacao_Segundo_Caso
-  m_TagString: Untagged
+  m_Name: Caso2
+  m_TagString: AnimItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1872,6 +1873,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &221383433033285175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013627899674044917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a956f12e9717c46a353d2ed6b419cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7055305923179628031
 GameObject:
   m_ObjectHideFlags: 0
