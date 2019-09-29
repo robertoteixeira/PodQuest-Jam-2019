@@ -7148,7 +7148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43ed5f5cbd8e6945a6ed04e62dab95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theText: {fileID: 1126749484}
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HighlightColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+  TheText: {fileID: 1126749484}
 --- !u!4 &1739965408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8653328985390336710, guid: d2b9ea8bf9494af478d599d9e36facc7,

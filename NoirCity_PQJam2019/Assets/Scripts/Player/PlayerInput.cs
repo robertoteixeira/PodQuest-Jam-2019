@@ -5,11 +5,13 @@ public class PlayerInput : MonoBehaviour
     
     private PlayerController _playerController;
 
-    private bool lockCamera = false;
+    private bool lockCamera = true;
     
     void Start()
     {
         _playerController = GetComponent<PlayerController>();
+        CursorManager.Instance.OnHideCursor += () => lockCamera = false;
+        CursorManager.Instance.OnShowCursor += () => lockCamera = true;
     }
 
     // Update is called once per frame
