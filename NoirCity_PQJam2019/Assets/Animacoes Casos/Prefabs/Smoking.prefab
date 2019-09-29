@@ -668,6 +668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7468447204553656956}
   - component: {fileID: 661821234802763526}
+  - component: {fileID: 1772527678392294764}
   m_Layer: 0
   m_Name: Smoking
   m_TagString: Untagged
@@ -701,7 +702,7 @@ Animator:
   m_GameObject: {fileID: 5908187185944262767}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f10a618100a2e9c41989d27bf9eb041e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2531ab36b9f7f614bb73ff311d1d894f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -710,6 +711,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1772527678392294764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908187185944262767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a956f12e9717c46a353d2ed6b419cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6232454701290241287
 GameObject:
   m_ObjectHideFlags: 0

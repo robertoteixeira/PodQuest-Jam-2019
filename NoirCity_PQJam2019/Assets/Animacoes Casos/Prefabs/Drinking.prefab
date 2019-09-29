@@ -260,6 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840444449599977500}
   - component: {fileID: 8575013911603598694}
+  - component: {fileID: 2106826147006289563}
   m_Layer: 0
   m_Name: Drinking
   m_TagString: Untagged
@@ -293,7 +294,7 @@ Animator:
   m_GameObject: {fileID: 3445759082813196815}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 969a5292ee1b0da48b0103cd5d71cb76, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 183283f0da0b70d4ab8328680039c5a6, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -302,6 +303,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2106826147006289563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445759082813196815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a956f12e9717c46a353d2ed6b419cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3647331571920010126
 GameObject:
   m_ObjectHideFlags: 0

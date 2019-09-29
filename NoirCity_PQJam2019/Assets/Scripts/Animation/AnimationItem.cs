@@ -23,7 +23,7 @@ public class AnimationItem : MonoBehaviour, IAnimationItem
         else
         {
             AnimationLength = _animator.runtimeAnimatorController.animationClips
-                                            .First(x => x.name == "Take 001").length;
+                                            .First(x => x.name == "Take 001" || x.name == "mixamo.com").length;
             //AnimationLength = _anim.clip.length;            
         }
 }
