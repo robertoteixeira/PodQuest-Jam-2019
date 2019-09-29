@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Shot!");
                 OnShot?.Invoke(ShotsAvailable);
                 Screenshot.TakeScreeenshot();
+                AudioManager.Instance.PlaySoundEffect();
             }
             else
             {

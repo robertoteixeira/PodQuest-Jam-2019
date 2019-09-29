@@ -4,6 +4,8 @@ public class PlayerInput : MonoBehaviour
 {    
     
     private PlayerController _playerController;
+
+    private bool lockCamera = false;
     
     void Start()
     {
@@ -23,7 +25,15 @@ public class PlayerInput : MonoBehaviour
             _playerController.SetCameraMode();
         }
 
-        var pos = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        _playerController.Look(pos);
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            lockCamera = !lockCamera;
+        }
+
+        if (!lockCamera)
+        {
+            var pos = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+            _playerController.Look(pos); 
+        }
     }
 }
