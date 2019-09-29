@@ -32,6 +32,23 @@ public class PlayerInput : MonoBehaviour
             lockCamera = !lockCamera;
         }
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            lockCamera = !lockCamera;
+        }
+
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            UIManager.Instance.ShowMissionPanel();
+            CursorManager.Instance.ShowCursor();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            UIManager.Instance.HideMissionPanel();
+            CursorManager.Instance.HideCursor();
+        }
+
         if (!lockCamera)
         {
             var pos = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));

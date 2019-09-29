@@ -6,6 +6,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject MainMenuPanel;
     public GameObject SendPicturePanel;
     public GameObject GameOverPanel;
+    public GameObject MissionPanel;
 
     public Action<Texture2D> OnScreenshot;
 
@@ -43,4 +44,15 @@ public class UIManager : Singleton<UIManager>
     {
         OnScreenshot?.Invoke(screenshot);
     }
+
+    public void ShowMissionPanel()
+    {
+        MissionPanel.SetActive(true);
+    }
+
+    public void HideMissionPanel()
+    {
+        MissionPanel.SetActive(false);
+    }
+  
 }
